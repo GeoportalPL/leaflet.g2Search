@@ -1,0 +1,122 @@
+/*!
+ * G2 search
+ * Geoportal.gov.pl
+ * GISPartner.pl
+ */
+
+.leaflet-control-g2search {
+  width: ~'calc(100vw - 2em - 10px)';
+  background-color: fade(#fff,85%);
+
+  .leaflet-control-g2search-input {
+    width: 100%;
+    border: none;
+    padding: 0.5em;
+  }
+  .leaflet-control-g2search-form{
+    height: 13px;
+  }
+  .leaflet-control-g2search-clear-icon {
+    width: 16px;
+    height: 16px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAABHNCSVQICAgIfAhkiAAAAcZJREFUSIndlrtugzAUhn9XgcEeLCQYEiEWL8Hv/ywoC4sVhQEWD3jASO6ECzalTS+q1H8Cn8t38DlggP8m8pGDtdYNwwCtNYwxsNYCAJIkAaUUnHPkeY4kSQ5zHRqVUq7rOjjnjqslBOfzGVVVvZtv12CMcW3bYhzHQ0AoxhiEEKCURnmjBWOMu91umKbpKciiNE1xvV4j2Evo2LbtlyEAME0T2raN1jcgpZR7drv2NI4jlFKbxnqQtdZ1XRcFZVmGuq5BKY1slFLUdY0syyJb13Ww1nqYBw3DsDtdRVGAc06klBsYpRRSSnDOSVEUUZxzDsMw+PvTcqG1jpwB4H6/Y55ndzqdyDzPrmkaAICUEuFaqHVODzLG7DobY9A0zQYGYAM5io1Ayxv/GRgAfAQJc0bj/VvyoCRJ3nVaGr9s1/Jk4YCEWuf0W0cp3X1RQ8jS+HBA9rZwXYR/Is75blVlWUaND3tWluVu7DqnB+V5DkLib2zf99BaR1UvMK216/s+iiOEIM/zt/u1USnlHo/HbnXP6nK5bI6NzdRVVUUYY9+GMMaisykabyEE0jT9MiRNUwghovW/O/jW+vWjfK2f+jn5f3oFhb0rwPddIXIAAAAASUVORK5CYII=);
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+  }
+
+  .leaflet-control-g2search-input:not(:valid) ~ .leaflet-control-g2search-clear-icon {
+    display: none;
+  }
+}
+
+
+.leaflet-control-g2search-suggestions {
+  position: absolute;
+  width: ~'calc(100vw - 2em - 12px)';
+
+  background-color: #fff;
+  border: 1px solid darkgray;
+
+  box-sizing: border-box;
+
+  z-index: 1;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  select {
+    width: 100%;
+    border: none;
+
+    option {
+      padding: 0.25em;
+      font-size: 14px;
+
+      &:hover {
+        background-color: fade(#000, 15%);
+      }
+    }
+  }
+
+  &> ul {
+    list-style-type: none;
+    margin: 0;
+  }
+
+  &:not(:empty) {
+    box-shadow: 0 3px 6px fade(#000, 50%);
+  }
+}
+
+.leaflet-control-g2search-results {
+  background-color: #fff;
+  max-height: ~'calc(75vh - 48px)';
+  overflow-y: auto;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  &> ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    &> li {
+      position: relative;
+      padding: 0.25em 0.5em;
+
+      &> .icon {
+        margin: 5px 0;
+      }
+      &> .text {
+        position: absolute;
+        margin: -40px 0 0 45px;
+        font-size: medium;
+      }
+      &> .details {
+        /* position: absolute; */
+        margin: -20px 0 0 45px;
+        color: #555;
+      }
+
+      &:hover {
+        background-color: fade(#000, 15%);
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .leaflet-control-g2search,
+  .leaflet-control-g2search-suggestions {
+    width: 400px;
+  }
+}
