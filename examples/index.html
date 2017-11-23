@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>G2 search example</title>
@@ -31,7 +32,7 @@
         </style>
 
         <link rel="stylesheet" href="../dist/g2search.css"/>
-        <script src="../dist/g2search.js"></script>
+        <script src="../src/g2search.js"></script>
     </head>
     <body>
         <div id="mapid" class="map-container"></div>
@@ -45,9 +46,7 @@
                         'Imagery © <a href="http://mapbox.com">Mapbox</a>',
                     id: 'mapbox.streets'
                 }).addTo(mymap);
-
                 L.control.g2search({hideResultOnSelect: true}).addTo(mymap);
         </script>
-        <input type="search" name="search" id="mySearch">
     </body>
 </html>
